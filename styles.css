@@ -19,19 +19,19 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px; /* Taller nav bar */
+  height: 80px;
 }
 
 .logo {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 700;
   color: #2b6cb0;
 }
 
 .nav-links {
   display: flex;
-  gap: 1.5em;
+  gap: 1em; /* Tighter spacing between menu items */
   align-items: center;
 }
 
@@ -40,6 +40,7 @@ nav {
   color: #2b6cb0;
   font-weight: 500;
   position: relative;
+  font-size: 1rem;
 }
 
 .nav-links a:hover {
@@ -75,7 +76,6 @@ nav {
   background-color: #f0f4f8;
 }
 
-/* Show dropdown on hover */
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -87,12 +87,7 @@ nav {
   align-items: center;
   text-align: center;
   padding: 2em;
-}
-
-h1 {
-  font-size: 2rem;
-  margin: 0.5em 0;
-  font-style: italic;
+  flex-direction: column;
 }
 
 .subtitle {
@@ -115,4 +110,22 @@ h1 {
 .button:hover {
   background: #2b6cb0;
   color: white;
+}
+
+.scroll-down {
+  display: inline-block;
+  margin-top: 1em;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #2b6cb0;
+  transition: color 0.3s;
+}
+
+.scroll-down:hover {
+  color: #1a436b;
+}
+
+section {
+  padding: 3em;
+  text-align: center;
 }
