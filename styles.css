@@ -11,24 +11,73 @@ body {
 
 header {
   background: white;
-  padding: 1em;
+  padding: 0 1em;
   border-bottom: 1px solid #ccc;
 }
 
 nav {
   display: flex;
-  justify-content: center;
-  gap: 1.5em;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px; /* Taller nav bar */
 }
 
-nav a {
+.logo {
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 600;
+  color: #2b6cb0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5em;
+  align-items: center;
+}
+
+.nav-links a {
   text-decoration: none;
   color: #2b6cb0;
   font-weight: 500;
+  position: relative;
 }
 
-nav a:hover {
+.nav-links a:hover {
   text-decoration: underline;
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  min-width: 180px;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dropdown-content span {
+  display: block;
+  padding: 0.5em 1em;
+  color: #2b6cb0;
+  font-weight: 400;
+  cursor: default;
+}
+
+.dropdown-content span:hover {
+  background-color: #f0f4f8;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .container {
@@ -43,7 +92,7 @@ nav a:hover {
 h1 {
   font-size: 2rem;
   margin: 0.5em 0;
-  font-style: italic; /* Italic logo text */
+  font-style: italic;
 }
 
 .subtitle {
