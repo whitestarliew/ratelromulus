@@ -33,7 +33,7 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 2em; /* More space between tabs */
+  gap: 2em; /* space between nav items */
   align-items: center;
   justify-content: center;
   flex: 1;
@@ -43,7 +43,6 @@ nav {
   text-decoration: none;
   color: #2b6cb0;
   font-weight: 500;
-  position: relative;
   font-size: 1rem;
 }
 
@@ -94,7 +93,7 @@ nav {
   position: relative;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  padding-top: 42.85%; /* 9/21 ratio */
+  padding-top: 42.85%; /* 21:9 aspect ratio */
   overflow: hidden;
 }
 
@@ -113,9 +112,11 @@ nav {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  text-shadow: 0 0 8px rgba(0,0,0,0.7);
-  padding: 1em;
+  text-shadow: 0 0 8px rgba(0,0,0,0.8);
+  padding: 2em;
   max-width: 90%;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
 }
 
 .hero-text h1 {
@@ -144,7 +145,27 @@ nav {
   display: block;
 }
 
-/* Responsive adjustments */
+/* About content styling if needed */
+.about-content {
+  max-width: 800px;
+  margin: 0 auto; /* Stick content close to image */
+  padding: 0 1em;
+  text-align: left;
+}
+
+.about-content h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+}
+
+.about-content p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+/* Responsive tweaks */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
