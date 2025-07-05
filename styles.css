@@ -34,6 +34,8 @@ nav {
   display: flex;
   gap: 1em;
   align-items: center;
+  justify-content: center; /* This centers them horizontally */
+  flex: 1;
 }
 
 .nav-links a {
