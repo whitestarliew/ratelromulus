@@ -1,62 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About - Ratel Romulus</title>
-  <link rel="stylesheet" href="styles.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <nav>
-      <div class="logo">
-        <a href="index.html">Ratel Romulus</a>
-      </div>
-      <div class="nav-links">
-        <a href="index.html">Main</a>
-        <a href="about.html">About</a>
-        <div class="dropdown">
-          <a href="services.html">
-            Services <span class="arrow">&#9662;</span>
-          </a>
-          <div class="dropdown-content">
-            <a href="#">Cloud Migration</a>
-            <a href="#">Modern App Hosting</a>
-            <a href="#">Managed Cloud Hosting</a>
-            <a href="#">Cloud Cost Solutions</a>
-            <a href="#">Multi-Cloud Strategy</a>
-          </div>
-        </div>
-        <a href="project.html">Project</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
-  </header>
-  <div class="hero-area-21-9">
-    <img src="mainpage.jpeg" alt="Cloud Infrastructure">
-    <div class="hero-text">
-      <h1>About Ratel Romulus</h1>
-      <p>Learn more about our mission and values.</p>
-    </div>
-  </div>
-  <main class="about-content">
-    <h1>About Ratel Romulus</h1>
-    <p>
-      Ratel Romulus was founded by Ralston Liew, an AWS Certified Solutions Architect Professional and DevOps Professional, with the goal of making robust cloud solutions accessible to organizations of all sizes. Our philosophy is simple: technology should be reliable, resilient, and cost-effective—not reserved only for large enterprises.
-    </p>
-    <p>
-      While we focus on delivering multi-cloud services across AWS, Azure, GCP, and Alicloud, we also believe in exploring the unknown. Our research interests include quantum computing, nuclear fusion, and emerging defense technologies.
-    </p>
-    <p>
-      The name “Ratel Romulus” reflects our values: the <em>ratel</em> (honey badger) symbolizes fearlessness and determination, while <em>Romulus</em> represents the spirit of building something lasting from humble beginnings.
-    </p>
-    <p>
-      📧 <a href="mailto:ralstonliew@gmail.com">ralstonliew@gmail.com</a>
-    </p>
-  </main>
-  <a href="https://wa.me/60182764773" class="whatsapp-button" target="_blank" aria-label="Chat on WhatsApp">
-    <img src="whatsapp.jpeg" alt="WhatsApp" class="whatsapp-icon">
-  </a>
-</body>
-</html>
+body {
+  margin: 0;
+  padding: 0;
+  background: #f0f4f8;
+  color: #1f2d3d;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: white;
+  padding: 0 1em;
+  border-bottom: 1px solid #ccc;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.logo a {
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 700;
+  color: #2b6cb0;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2em; /* More space between tabs */
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #2b6cb0;
+  font-weight: 500;
+  position: relative;
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.nav-links .arrow {
+  font-size: 0.7rem;
+  margin-left: 0.2em;
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  min-width: 180px;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.5em 1em;
+  color: #2b6cb0;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f4f8;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hero area with 21:9 ratio */
+.hero-area-21-9 {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding-top: 42.85%; /* 9/21 ratio */
+  overflow: hidden;
+}
+
+.hero-area-21-9 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  padding: 1em;
+  max-width: 90%;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  margin: 0.4em 0;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* WhatsApp button styling */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+}
+
+.whatsapp-button img.whatsapp-icon {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-text h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+}
