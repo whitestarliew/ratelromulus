@@ -23,18 +23,19 @@ nav {
   gap: 1em;
 }
 
-.logo {
+.logo a {
   font-size: 1.6rem;
   font-style: italic;
   font-weight: 700;
   color: #2b6cb0;
+  text-decoration: none;
 }
 
 .nav-links {
   display: flex;
-  gap: 1em;
+  gap: 2em; /* More space between tabs */
   align-items: center;
-  justify-content: center; /* This centers them horizontally */
+  justify-content: center;
   flex: 1;
 }
 
@@ -88,23 +89,27 @@ nav {
   display: block;
 }
 
-.hero-area {
+/* Hero area with 21:9 ratio */
+.hero-area-21-9 {
   position: relative;
-  text-align: center;
-  margin: 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding-top: 42.85%; /* 9/21 ratio */
+  overflow: hidden;
 }
 
-.hero-area img {
+.hero-area-21-9 img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  max-height: 500px;
+  height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .hero-text {
   position: absolute;
-  top: 60%; /* Adjusted for better centering */
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -123,13 +128,14 @@ nav {
   margin: 0;
 }
 
+/* WhatsApp button styling */
 .whatsapp-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: transparent; /* No background box */
-  border-radius: 50%;
+  background-color: transparent;
   padding: 0;
+  border: none;
 }
 
 .whatsapp-button img.whatsapp-icon {
@@ -138,6 +144,7 @@ nav {
   display: block;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
