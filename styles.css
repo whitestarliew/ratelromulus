@@ -2,8 +2,9 @@
 body {
   margin: 0;
   padding: 0;
-  background: url('mainpage.jpeg') repeat-y center top;
-  background-size: cover;
+  background: url('mainpage.jpeg') no-repeat center top;
+  background-size: contain;
+  background-attachment: scroll;
   color: #1f2d3d;
   font-family: 'Inter', sans-serif;
   display: flex;
@@ -16,6 +17,8 @@ header {
   background: rgba(255, 255, 255, 0.9);
   padding: 0 1em;
   border-bottom: 1px solid #ccc;
+  position: relative;
+  z-index: 10;
 }
 
 /* Navigation bar */
@@ -94,10 +97,10 @@ nav {
   max-width: 800px;
   margin: 2em auto;
   padding: 2em;
-  background: rgba(0,0,0,0.5); /* Semi-transparent black background */
+  background: rgba(0,0,0,0.5);
   border-radius: 8px;
   text-align: left;
-  color: white; /* White text for readability */
+  color: white;
 }
 
 /* Footer styling */
@@ -105,8 +108,8 @@ footer {
   text-align: center;
   padding: 1em;
   font-size: 0.9rem;
-  color: #555;
-  background: rgba(255,255,255,0.9);
+  color: white;
+  background: transparent;
   margin-top: auto;
 }
 
