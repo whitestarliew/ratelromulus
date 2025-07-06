@@ -88,22 +88,17 @@ nav {
   display: block;
 }
 
-/* Hero area */
+/* Hero area Option 2 */
 .hero-area-21-9 {
   position: relative;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  padding-top: 42.85%; /* 21:9 aspect ratio */
+  width: 100%;
   overflow: hidden;
 }
 
 .hero-area-21-9 img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
 }
 
 .hero-text {
@@ -153,21 +148,17 @@ footer {
 .about-content {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 1em;
+  padding: 1em;
   text-align: left;
+  background: rgba(255,255,255,0.85);
+  border-radius: 8px;
 }
 
-.about-content h1 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5em;
-}
-
-.about-content p,
-.about-content ul {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.6;
-  margin-bottom: 1em;
+/* Page background image behind content */
+.page-background {
+  background: url('mainpage.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  flex: 1;
 }
 
 /* Responsive tweaks */
