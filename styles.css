@@ -1,10 +1,19 @@
-/* Body background and base styling */
+/* Background div covering the entire viewport */
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('mainpage.jpeg') no-repeat center center;
+  background-size: cover;
+  z-index: -1;
+}
+
+/* Body base styling */
 body {
   margin: 0;
   padding: 0;
-  background: url('mainpage.jpeg') no-repeat center center;
-  background-size: cover; /* Fill the whole area, no gaps */
-  background-attachment: scroll;
   color: #1f2d3d;
   font-family: 'Inter', sans-serif;
   display: flex;
@@ -18,7 +27,7 @@ header {
   padding: 0 1em;
   border-bottom: 1px solid #ccc;
   position: relative;
-  z-index: 1000; /* Make sure it's on top and clickable */
+  z-index: 1000;
 }
 
 /* Navigation bar */
@@ -72,7 +81,7 @@ nav {
   background-color: white;
   border: 1px solid #ccc;
   min-width: 180px;
-  z-index: 2000; /* Always on top of other content */
+  z-index: 2000;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -97,12 +106,12 @@ nav {
   max-width: 800px;
   margin: 2em auto;
   padding: 2em;
-  background: rgba(0,0,0,0.5); /* Semi-transparent black */
+  background: rgba(0,0,0,0.5);
   border-radius: 8px;
   text-align: left;
   color: white;
   position: relative;
-  z-index: 1; /* So it stays below the nav */
+  z-index: 1;
 }
 
 /* Footer styling */
@@ -113,6 +122,8 @@ footer {
   color: white;
   background: transparent;
   margin-top: auto;
+  position: relative;
+  z-index: 1;
 }
 
 /* WhatsApp floating button */
@@ -123,6 +134,7 @@ footer {
   width: 50px;
   height: 50px;
   cursor: pointer;
+  z-index: 1000;
 }
 
 .whatsapp-button img.whatsapp-icon {
@@ -131,7 +143,7 @@ footer {
   display: block;
 }
 
-/* Responsive tweaks for smaller screens */
+/* Responsive tweaks */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
