@@ -92,11 +92,11 @@ nav {
   max-width: 800px;
   margin: 2em auto;
   padding: 2em;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
   border-radius: 8px;
   text-align: left;
+  color: white; /* make text white for readability */
 }
-
 /* Footer styling */
 footer {
   text-align: center;
