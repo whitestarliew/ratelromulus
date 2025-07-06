@@ -1,8 +1,8 @@
-/* Body with single background image */
+/* Body background and base styling */
 body {
   margin: 0;
   padding: 0;
-  background: url('mainpage.jpeg') no-repeat center center fixed;
+  background: url('mainpage.jpeg') repeat-y center top;
   background-size: cover;
   color: #1f2d3d;
   font-family: 'Inter', sans-serif;
@@ -18,7 +18,7 @@ header {
   border-bottom: 1px solid #ccc;
 }
 
-/* Nav styling */
+/* Navigation bar */
 nav {
   display: flex;
   justify-content: space-between;
@@ -27,6 +27,7 @@ nav {
   gap: 1em;
 }
 
+/* Logo link */
 .logo a {
   font-size: 1.6rem;
   font-style: italic;
@@ -35,6 +36,7 @@ nav {
   text-decoration: none;
 }
 
+/* Navigation links */
 .nav-links {
   display: flex;
   gap: 2em;
@@ -87,16 +89,17 @@ nav {
   display: block;
 }
 
-/* Content area styling */
+/* Content box styling */
 .about-content {
   max-width: 800px;
   margin: 2em auto;
   padding: 2em;
-  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  background: rgba(0,0,0,0.5); /* Semi-transparent black background */
   border-radius: 8px;
   text-align: left;
-  color: white; /* make text white for readability */
+  color: white; /* White text for readability */
 }
+
 /* Footer styling */
 footer {
   text-align: center;
@@ -117,14 +120,13 @@ footer {
   cursor: pointer;
 }
 
-/* WhatsApp icon image inside button */
 .whatsapp-button img.whatsapp-icon {
   width: 100%;
   height: 100%;
   display: block;
 }
 
-/* Responsive tweaks */
+/* Responsive tweaks for smaller screens */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
