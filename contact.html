@@ -6,21 +6,45 @@
   <title>Contact – Ratel Romulus</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* small form tweaks that re-use your global palette */
-    form label    { color:#fff; font-weight:600; }
+    form label    { color:#fff; font-weight:600; display:block; margin-top:1rem; }
     form input,
-    form textarea { width:100%; padding:.6rem; border-radius:4px; border:none; margin-top:.2rem; }
-    form button   { padding:.6rem 1.4rem; margin-top:.8rem; background:#2b6cb0; color:#fff; border:none; border-radius:4px; cursor:pointer; }
-    form button:hover{ background:#1d4f8d; }
-    #form-status  { margin-top:1rem; font-weight:600; }
-    #form-status.ok { color:#28d267; }
-    #form-status.err{ color:#ff5f56; }
+    form textarea {
+      width:100%;
+      padding:.6rem;
+      border-radius:6px;
+      border:none;
+      margin-top:0.3rem;
+      font-size:1rem;
+    }
+    form button {
+      padding:.6rem 1.4rem;
+      margin-top:1rem;
+      background:#2b6cb0;
+      color:#fff;
+      border:none;
+      border-radius:6px;
+      font-size:1rem;
+      cursor:pointer;
+    }
+    form button:hover {
+      background:#1d4f8d;
+    }
+    #form-status  {
+      margin-top:1rem;
+      font-weight:600;
+    }
+    #form-status.ok {
+      color:#28d267;
+    }
+    #form-status.err{
+      color:#ff5f56;
+    }
   </style>
 </head>
 <body>
   <div class="background-image"></div>
 
-  <!-- Header (same as other pages) -->
+  <!-- Header -->
   <header>
     <nav>
       <div class="logo"><a href="index.html">Ratel Romulus</a></div>
@@ -40,38 +64,42 @@
     </nav>
   </header>
 
-  <!-- contact box -->
-  <div class="about-content">
-    <h1>Contact Us</h1>
-    <p style="margin-bottom:1.2rem">
-      Drop us a note and the Ratel Romulus team will reply within one business day.
-    </p>
+  <!-- Main Centered Content -->
+  <main class="page-wrapper">
+    <section class="content-card">
 
-    <form id="contact-form" novalidate>
-      <label for="name">Name</label>
-      <input  id="name"    name="name"    type="text"   required placeholder="Your name">
+      <h1>Contact Us</h1>
+      <p style="margin-bottom:1.2rem">
+        Drop us a note and the Ratel Romulus team will reply within one business day.
+      </p>
 
-      <label for="email">Email</label>
-      <input  id="email"   name="email"   type="email"  required placeholder="you@example.com">
+      <form id="contact-form" novalidate>
+        <label for="name">Name</label>
+        <input  id="name"    name="name"    type="text"   required placeholder="Your name">
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="6" required placeholder="How can we help?"></textarea>
+        <label for="email">Email</label>
+        <input  id="email"   name="email"   type="email"  required placeholder="you@example.com">
 
-      <button type="submit">Send&nbsp;Message</button>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required placeholder="How can we help?"></textarea>
 
-      <div id="form-status"></div>
-    </form>
-  </div>
+        <button type="submit">Send Message</button>
+
+        <div id="form-status"></div>
+      </form>
+
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>© 2025 Ratel Romulus. All rights reserved.</footer>
 
-  <!-- WhatsApp quick-chat -->
+  <!-- WhatsApp Button -->
   <a class="whatsapp-button" target="_blank" href="https://wa.me/60182764773">
     <img class="whatsapp-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
 
-  <!-- basic JS handler -->
+  <!-- Contact JS Logic -->
   <script>
     const form = document.getElementById('contact-form');
     const status = document.getElementById('form-status');
@@ -88,19 +116,12 @@
       };
 
       try {
-        /*  ─── OPTION A – Later hit your Flask endpoint ──
-            await fetch('https://api.ratelromulus.com/contact', {
-              method:'POST',
-              headers:{'Content-Type':'application/json'},
-              body:JSON.stringify(payload)
-            });
-            ─── OPTION B – quick Formspree fallback (uncomment) ──
-            await fetch('https://formspree.io/f/yourID', {
-              method:'POST',
-              headers:{'Content-Type':'application/json'},
-              body:JSON.stringify(payload)
-            });
-        */
+        // await fetch('https://formspree.io/f/yourID', {
+        //   method:'POST',
+        //   headers:{'Content-Type':'application/json'},
+        //   body:JSON.stringify(payload)
+        // });
+
         status.textContent = 'Thank you! We’ll be in touch soon.';
         status.className = 'ok';
         form.reset();
