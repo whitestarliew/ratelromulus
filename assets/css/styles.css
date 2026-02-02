@@ -1,15 +1,21 @@
 /* Ghibli Design System */
 :root {
-  --color-primary: #2E5936; /* Forest Green */
-  --color-secondary: #8CBED6; /* Sky Blue */
-  --color-accent: #EDAE49; /* Golden Sun */
-  --color-text: #2D3436; /* Soft Charcoal */
-  --color-bg-light: #F3F6F4; /* Cloud White */
-  --color-glass: rgba(255, 255, 255, 0.75);
-  --color-glass-border: rgba(255, 255, 255, 0.4);
+  --color-primary: #1A3C25;
+  /* Deeper Forest Green */
+  --color-secondary: #5D8AA8;
+  /* Muted Blue */
+  --color-accent: #D4AF37;
+  /* Muted Gold */
+  --color-text: #1F2937;
+  /* Dark Grey */
+  --color-bg-light: #F0F4F1;
+  /* Soft Sage White */
+  /* Reduced opacity and warmer tint for less glare */
+  --color-glass: rgba(250, 248, 245, 0.85);
+  --color-glass-border: rgba(255, 255, 255, 0.2);
   --font-heading: 'Cinzel Decorative', cursive;
   --font-body: 'Quicksand', sans-serif;
-  --shadow-soft: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  --shadow-soft: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Quicksand:wght@300;400;600&display=swap');
@@ -27,7 +33,7 @@ body {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
-  background-color: var(--color-secondary); /* Fallback */
+  background-color: #E8EBE9;
 }
 
 /* Background Wrapper for Parallax/Fixed effect */
@@ -44,6 +50,20 @@ body {
   background-repeat: no-repeat;
 }
 
+/* Overlay to reduce brightness of the background image */
+.bg-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  /* 15% Dark overlay */
+  backdrop-filter: sepia(10%);
+  /* Slight vintage warmth */
+}
+
 /* Header & Nav */
 header {
   padding: 1rem 2rem;
@@ -53,7 +73,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 nav {
@@ -113,6 +133,7 @@ nav {
   gap: 6px;
   cursor: pointer;
 }
+
 .bar {
   width: 25px;
   height: 3px;
@@ -125,7 +146,8 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  min-height: 80vh; /* Ensure scroll if content is small */
+  min-height: 80vh;
+  /* Ensure scroll if content is small */
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -149,16 +171,33 @@ main {
 }
 
 /* Typography Helpers */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-heading);
   color: var(--color-primary);
   margin-bottom: 1rem;
 }
 
-h1 { font-size: 3.5rem; line-height: 1.2; text-shadow: 2px 2px 4px rgba(255,255,255,0.8); }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 1.8rem; }
-p { font-size: 1.1rem; color: #4a4a4a; margin-bottom: 1.5rem; }
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+  margin-bottom: 1.5rem;
+}
 
 /* Hero Section */
 .hero {
@@ -166,10 +205,12 @@ p { font-size: 1.1rem; color: #4a4a4a; margin-bottom: 1.5rem; }
   padding: 4rem 0;
   animation: fadeIn 1.5s ease-out;
 }
+
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
 }
+
 .hero-tagline {
   font-size: 1.4rem;
   font-style: italic;
@@ -194,7 +235,7 @@ p { font-size: 1.1rem; color: #4a4a4a; margin-bottom: 1.5rem; }
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 1.5rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Contact Page */
@@ -236,7 +277,7 @@ p { font-size: 1.1rem; color: #4a4a4a; margin-bottom: 1.5rem; }
 footer {
   text-align: center;
   padding: 2rem;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   margin-top: auto;
   font-size: 0.9rem;
   color: var(--color-primary);
@@ -244,14 +285,29 @@ footer {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .animate-float {
@@ -260,10 +316,19 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-  h1 { font-size: 2.5rem; }
-  .nav-links { display: none; /* simple stack for now or add js toggle later */ }
-  .menu-toggle { display: flex; }
-  
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .nav-links {
+    display: none;
+    /* simple stack for now or add js toggle later */
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
   /* Mobile Nav Drawer (Simplified) */
   .nav-active .nav-links {
     display: flex;
@@ -274,6 +339,6 @@ footer {
     width: 100%;
     background: white;
     padding: 2rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
 }
