@@ -1,12 +1,17 @@
 /* Global Styles */
 :root {
-    --primary-color: #0077b6; /* Cloud Blue */
-    --secondary-color: #00b4d8; /* Sky Blue */
-    --accent-color: #90e0ef; /* Light Blue */
+    --primary-color: #0077b6;
+    /* Cloud Blue */
+    --secondary-color: #00b4d8;
+    /* Sky Blue */
+    --accent-color: #90e0ef;
+    /* Light Blue */
     --text-color: #333;
-    --bg-color: #eef2f5; /* Friendly soft grey-blue background */
+    --bg-color: #cfd8dc;
+    /* Darker friendly grey-blue background */
     --card-bg: #ffffff;
     --whatsapp-green: #25D366;
+    --nav-hover: #e0f7fa;
 }
 
 body {
@@ -18,7 +23,9 @@ body {
     line-height: 1.6;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: var(--primary-color);
 }
 
@@ -30,14 +37,16 @@ a {
 /* Header */
 header {
     background-color: var(--card-bg);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 1rem 5%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0 5%;
+    /* Adjusted padding for alignment */
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
+    height: 70px;
 }
 
 .logo {
@@ -49,11 +58,69 @@ header {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    height: 100%;
 }
 
-nav a:hover {
-    color: var(--secondary-color);
+nav li {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+nav a:hover,
+nav li:hover>a {
+    color: var(--primary-color);
+    background-color: var(--nav-hover);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    /* Position right below the parent li */
+    left: 0;
+    background-color: var(--card-bg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    min-width: 220px;
+    z-index: 1000;
+    border-radius: 0 0 5px 5px;
+    padding: 10px 0;
+    flex-direction: column;
+}
+
+nav li:hover .dropdown-menu {
+    display: flex;
+}
+
+.dropdown-menu li {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--text-color);
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--nav-hover);
+    color: var(--primary-color);
 }
 
 /* Hero Section */
@@ -110,7 +177,7 @@ nav a:hover {
     background: var(--card-bg);
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s;
 }
 
@@ -126,7 +193,8 @@ nav a:hover {
 
 /* Certifications Section */
 .certifications {
-    background-color: #e3effd; /* Slightly different shade */
+    background-color: #e3effd;
+    /* Slightly different shade */
     padding: 80px 5%;
     text-align: center;
 }
@@ -143,7 +211,7 @@ nav a:hover {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 200px;
     text-align: center;
 }
@@ -198,7 +266,9 @@ footer {
     .hero h1 {
         font-size: 2rem;
     }
+
     nav ul {
-        display: none; /* Simple hiding for now, can implement toggle later */
+        display: none;
+        /* Simple hiding for now, can implement toggle later */
     }
 }

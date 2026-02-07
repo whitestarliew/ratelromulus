@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <!-- Font Awesome for Icons (using CDN for simplicity) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
 
     <!-- Header -->
@@ -15,8 +17,15 @@
         <div class="logo">CloudServices</div>
         <nav>
             <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#services">Services <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="service-migration.html">Cloud Migration</a></li>
+                        <li><a href="service-modernization.html">Infrastructure Modernization</a></li>
+                        <li><a href="service-security.html">Cloud Security</a></li>
+                    </ul>
+                </li>
                 <li><a href="#certifications">Certifications</a></li>
             </ul>
         </nav>
@@ -25,7 +34,8 @@
     <!-- Hero Section -->
     <section id="hero" class="hero">
         <h1>Cloud Transformation & Migration</h1>
-        <p>Accelerate your business with secure, scalable, and efficient cloud solutions. We help you migrate and modernize your infrastructure.</p>
+        <p>Accelerate your business with secure, scalable, and efficient cloud solutions. We help you migrate and
+            modernize your infrastructure.</p>
         <a href="https://wa.me/60182764773" class="cta-button">Get Started</a>
     </section>
 
@@ -61,14 +71,16 @@
                 <i class="fab fa-aws" style="font-size: 4rem; color: #FF9900;"></i>
                 <h3>AWS Certified</h3>
                 <p>Solutions Architect & More</p>
-                <a href="https://www.credly.com/users/liew-kin-hong" target="_blank" style="color: blue; text-decoration: underline;">Verify on Credly</a>
+                <a href="https://www.credly.com/users/liew-kin-hong" target="_blank"
+                    style="color: blue; text-decoration: underline;">Verify on Credly</a>
             </div>
             <!-- Azure Certification -->
             <div class="cert-item">
                 <i class="fab fa-microsoft" style="font-size: 4rem; color: #00A4EF;"></i>
                 <h3>Microsoft Azure</h3>
                 <p>Azure Administrator & More</p>
-                <a href="https://www.credly.com/users/liew-kin-hong" target="_blank" style="color: blue; text-decoration: underline;">Verify on Credly</a>
+                <a href="https://www.credly.com/users/liew-kin-hong" target="_blank"
+                    style="color: blue; text-decoration: underline;">Verify on Credly</a>
             </div>
         </div>
     </section>
@@ -85,4 +97,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
